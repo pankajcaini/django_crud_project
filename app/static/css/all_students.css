@@ -1,0 +1,49 @@
+
+
+body{
+    background-color: aliceblue;
+    position: relative;
+}
+
+
+#students-table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 100px;
+}
+
+#students-table th,td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+/* modal */
+
+#modal{
+    border: 2px solid red;
+    background-color: beige;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    right: 0;
+}
+
+.hide-modal{
+    display: none;
+}
+
+.display-modal{
+    display: block;
+}
+
+
+.blur-body{
+    background-color: cadetblue;
+}
+
+/* modal */

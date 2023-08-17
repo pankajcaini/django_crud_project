@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/all_students.css' %}">
+</head>
+<body class="">
+
+    <ul>
+        <li><a href="{% url 'add_student' %}">Add New Student</a></li>
+    </ul>
+
+   <table id="students-table" align="center">
+        <thead>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Course</th>
+            <th>Current Year</th>
+            <th>Current Semester</th>
+            <th>Addmission Year</th>
+            <th>Phone Number</th>
+            <th>Email ID</th>
+            <th colspan="3">Action</th>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>{{student.id}}</td>
+                    <td>{{student.first_name}}</td>
+                    <td>{{student.last_name}}</td>
+                    <td>{{student.course}}</td>
+                    <td>{{student.year}}</td>
+                    <td>{{student.semester}}</td>
+                    <td>{{student.addmission_year}}</td>
+                    <td>{{student.phone_number}}</td>
+                    <td>{{student.email_id}}</td>
+                    <td><a href="{% url 'view_student_detail' student.id %}">view detail</a></td>
+                    <td><a href="{% url 'update-student' student.id %}">update</a></td>
+                    <td><a href="{% url 'delete-student' student.id %}" class="delete-student" data-id="{{student.id}}">delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+   </table>
+
+
+   <div id="modal" class="hide-modal">
+        <p>are you sure to delete this record ?</p>
+        <div>
+            <a href="" id="yes-delete-recird-link">Yes</a>
+            <button id="no-button">NO</button>
+        </div>
+   </div>
+
+
+
+   <script src="{% static 'js/all_students.js' %}"></script>
+</body>
+</html>
